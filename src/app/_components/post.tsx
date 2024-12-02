@@ -9,12 +9,12 @@ export function LatestPost() {
 
   const utils = api.useUtils();
   const [name, setName] = useState("");
-  const createPost = api.post.create.useMutation({
-    onSuccess: async () => {
-      await utils.post.invalidate();
-      setName("");
-    },
-  });
+  // const createPost = api.post.create.useMutation({
+  //   onSuccess: async () => {
+  //     await utils.post.invalidate();
+  //     setName("");
+  //   },
+  // });
 
   return (
     <div className="w-full max-w-xs">
@@ -26,7 +26,7 @@ export function LatestPost() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          createPost.mutate({ name });
+          // createPost.mutate({ name });
         }}
         className="flex flex-col gap-2"
       >
@@ -40,9 +40,10 @@ export function LatestPost() {
         <button
           type="submit"
           className="rounded-full bg-white/10 px-10 py-3 font-semibold transition hover:bg-white/20"
-          disabled={createPost.isPending}
+          // disabled={createPost.isPending}
         >
-          {createPost.isPending ? "Submitting..." : "Submit"}
+          {/* {createPost.isPending ? "Submitting..." : "Submit"} */}
+          "Submit"
         </button>
       </form>
     </div>
